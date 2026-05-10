@@ -8,17 +8,21 @@ Este repositório é um exemplo de **produto unindo especificação orientada a 
 
 ## Preview
 
-> Adicione aqui screenshots do projeto ou um GIF curto da experiência.
+<p align="center">
+  <a href="https://keuvyndev.github.io/lp-aura-design/">
+    <img src="./docs/preview-hero.png" width="100%" />
+  </a>
+</p>
 
-```md
-![Preview](./docs/preview.png)
-```
+<p align="center">
+  <a href="https://keuvyndev.github.io/lp-aura-design/">
+    <img src="./docs/preview-gallery.png" width="75%" />
+  </a>
+</p>
 
 ---
 
 ## Live demo
-
-> Adicione aqui o deploy público do projeto.
 
 ```txt
 https://keuvyndev.github.io/lp-aura-design/
