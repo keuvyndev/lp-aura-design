@@ -2,85 +2,176 @@
 
 Landing page imersiva para o **Studio Aura** (Marina Vasconcelos): arquitetura e interiores de alto padrão, com foco em **luxo discreto**, conversão de leads qualificados e narrativa visual de boutique.
 
-Este repositório é um exemplo de **produto unindo especificação orientada a marca, engenharia front-end e uso assistido por IA**: o brief vive em `.ai/prd.md`; a implementação é HTML, CSS e JavaScript nativos, com animações e scroll pensados para sensação premium.
+Este repositório é um exemplo de **produto unindo especificação orientada a marca, engenharia front-end e uso assistido por IA**: o brief vive em `docs/prd.md`; a implementação é HTML, CSS e JavaScript nativos, com animações e scroll pensados para sensação premium.
+
+---
+
+## Preview
+
+> Adicione aqui screenshots do projeto ou um GIF curto da experiência.
+
+```md
+![Preview](./docs/preview.png)
+```
+
+---
+
+## Live demo
+
+> Adicione aqui o deploy público do projeto.
+
+```txt
+https://keuvyndev.github.io/lp-aura-design/
+```
+
+---
+
+## Highlights
+
+- Scroll-driven storytelling com **GSAP + ScrollTrigger**
+- Hero cinematográfico com vídeo e layering
+- Arquitetura em **HTML/CSS/JS nativos**
+- Galeria dinâmica gerada via JavaScript
+- Sistema visual inspirado em boutique hotels e galerias
+- Fluxo orientado por **PRD + IA + refinamento manual**
+- Layout responsivo premium com foco em percepção de marca
+
+---
 
 ## Objetivo e conceito (brief)
 
-Conforme o [PRD](.ai/prd.md):
+Conforme o [PRD](docs/prd.md):
 
-- **Conceito visual:** “The Curated Void” — riqueza material com respiro espacial; direção tipo *boutique hotel* + galeria de arte.
+- **Conceito visual:** “The Curated Void” — riqueza material com respiro espacial; direção inspirada em _boutique hotels_ e galerias de arte.
 - **Público:** leads de alto poder aquisitivo.
 - **Jornada em uma página:** hero com vídeo, processo em três momentos, galeria assimétrica, essência da fundadora, depoimentos e contato (formulário + WhatsApp).
 
+---
+
 ## Tecnologias
 
-| Camada | Uso no projeto |
-|--------|------------------|
-| **HTML5** | Estrutura semântica (`header`, `main`, `section`, `nav`, `article`), acessibilidade básica (`aria-*`, `role="status"`), meta SEO e `lang="pt-BR"`. |
-| **CSS3** | Variáveis (`:root`), Grid e Flexbox, `clamp()` para tipografia fluida, `backdrop-filter`, transições, media queries (desktop-first com breakpoints ~1080px e ~860px), overlay de ruído sutil. |
-| **Google Fonts** | **Bodoni Moda** (títulos) e **Hanken Grotesk** (corpo e UI), alinhados ao design system do brief. |
-| **JavaScript (ES6+)** | Módulo único sem framework: dados do portfólio, formulário com validação, menu mobile, slider de depoimentos, `IntersectionObserver` para reveals. |
-| **GSAP 3.12.5** + **ScrollTrigger** | Seção “processo”: pin do bloco de vídeo, *scrub* no scroll, timeline sincronizada com `currentTime` do vídeo para narrativa em camadas. |
+| Camada                          | Uso no projeto                                                                                                                                      |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **HTML5**                       | Estrutura semântica (`header`, `main`, `section`, `nav`, `article`), acessibilidade básica (`aria-`\*, `role="status"`), meta SEO e `lang="pt-BR"`. |
+| **CSS3**                        | Variáveis (`:root`), Grid e Flexbox, `clamp()` para tipografia fluida, `backdrop-filter`, transições, media queries e overlay de ruído sutil.       |
+| **Google Fonts**                | **Bodoni Moda** (títulos) e **Hanken Grotesk** (corpo e UI), alinhados ao design system do brief.                                                   |
+| **JavaScript (ES6+)**           | Módulo único sem framework: dados do portfólio, formulário com validação, menu mobile, slider de depoimentos e `IntersectionObserver`.              |
+| **GSAP 3.12.5 + ScrollTrigger** | Seção “processo” com pin do vídeo, scrub no scroll e timeline sincronizada ao `currentTime` do vídeo.                                               |
 
-Não há build step obrigatório: é um site **estático**, adequado a hospedagem em qualquer CDN ou servidor de arquivos estáticos.
+O projeto não exige build step obrigatório: é um site **estático**, adequado a hospedagem em CDNs ou servidores de arquivos estáticos.
+
+---
+
+## Architectural decisions
+
+O projeto utiliza HTML, CSS e JavaScript nativos para:
+
+- reduzir overhead de framework
+- maximizar controle fino de animações
+- eliminar complexidade de build
+- otimizar carregamento inicial
+- explorar diretamente capacidades modernas da plataforma web
+
+A escolha por uma stack enxuta favorece a estética cinematográfica e a fluidez visual do projeto.
+
+---
 
 ## Desenvolvimento e IA
 
-- **Papel da IA:** acelerar iteração a partir de um PRD explícito (paleta, tipografia, sitemap, inventário de mídias), gerar markup/CSS/JS de alta fidelidade e refinar copy em português — sempre com revisão humana para marca, performance e acessibilidade.
-- **Papel do desenvolvimento:** decisões de arquitetura (vanilla vs. framework), contratos de dados (array do portfólio), integração GSAP/ScrollTrigger com vídeo, validação de formulário, lazy loading de imagens e CSS responsivo com *safe areas* e menu colapsável.
+A IA foi utilizada como ferramenta de aceleração criativa e técnica ao longo do processo:
 
-Esse fluxo **PRD → implementação → ajuste manual** é o que torna o projeto um estudo de **IA + engenharia front-end**, não apenas um template gerado.
+- apoio na prototipação
+- refinamento iterativo de copy
+- estruturação inicial de markup e estilos
+- exploração visual orientada pelo PRD
+
+Toda implementação final, decisões de arquitetura, refinamentos visuais, responsividade, integração de animações e ajustes de UX passaram por curadoria e revisão manual.
+
+O fluxo **PRD → implementação → refinamento manual** posiciona o projeto como um estudo de **engenharia assistida por IA**, combinando especificação, direção visual e desenvolvimento front-end.
+
+---
+
+## Performance considerations
+
+- Lazy loading de imagens
+- Uso de `IntersectionObserver` para reveals
+- Estrutura sem dependências pesadas de UI
+- Animações baseadas em `transform` e `opacity`
+- Vídeos otimizados para experiência web
+- CSS organizado com variáveis e responsividade fluida
+
+---
+
+## Developer experience
+
+- Estrutura desacoplada
+- Design system centralizado em CSS variables
+- Dados do portfólio organizados em arrays JavaScript
+- Fácil substituição de assets e conteúdos
+- Sem necessidade de tooling complexo
+- Projeto simples de portar para frameworks futuros
+
+---
 
 ## Estrutura do repositório
 
-```
+```txt
 Aura/
-├── index.html          # Ponto de entrada da página
+├── index.html
 ├── src/
-│   ├── css/styles.css  # Design system e layout
-│   ├── js/script.js    # Comportamentos e animação do processo
-│   └── assets/         # Vídeos e imagens (vide PRD)
-└── .ai/
-    └── prd.md          # Brief do produto
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   └── script.js
+│   └── assets/
+├── docs/
+│   └── prd.md
 ```
 
-**Nota:** o `index.html` referencia `css/styles.css` e `js/script.js`. Os arquivos-fonte atuais estão em `src/css/` e `src/js/`. Para abrir localmente sem ajuste de caminhos, alinhe as pastas `css/` e `js/` à raiz (cópia, symlink ou atualização dos `href`/`src` no HTML) ou sirva o projeto com um mapeamento que resolva esses URLs.
+---
 
-## Assets esperados (inventário do PRD)
+## Assets esperados
 
-- `src/assets/interior-dark-video.mp4` — fundo do hero  
-- `src/assets/video-camadas.mp4` — seção de processo  
-- Imagens do portfólio e retrato/ambiente da seção “Essência” (nomes usados no código: `projeto-*.png`, etc.)
+- `src/assets/interior-dark-video.mp4` — vídeo do hero
+- `src/assets/video-camadas.mp4` — narrativa visual do processo
+- imagens do portfólio e seção Essência
+
+---
 
 ## Como visualizar
 
-1. Garanta que `css/styles.css`, `js/script.js` e `src/assets/` estejam acessíveis conforme os caminhos do `index.html`.  
-2. Sirva a pasta com um servidor HTTP local (vídeos e alguns recursos se comportam melhor do que com `file://`). Exemplos:
+1. Garanta que os caminhos de `css/`, `js/` e `assets/` estejam corretos no `index.html`.
+2. Sirva a pasta com um servidor local:
 
 ```bash
-# Node (npx)
+# Node
 npx --yes serve .
 
 # Python
 python -m http.server 8080
 ```
 
-3. Abra a URL indicada no terminal no navegador.
-
-## Funcionalidades implementadas
-
-- Hero com vídeo em loop, poster e vinheta.  
-- Processo com **scroll pin + scrub** e vídeo sincronizado ao progresso do scroll.  
-- Galeria **assimétrica** (classes `card-tall` / `card-wide`) montada via JavaScript.  
-- Reveal ao entrar na viewport (`IntersectionObserver`).  
-- Depoimentos em rotação automática.  
-- Formulário de contato com validação client-side; CTA para WhatsApp (substitua o número em `href` do `wa.me` pelo real).  
-- Header fixo com blur; menu hambúrguer em telas menores.
-
-## Licença e créditos
-
-Conteúdo de marca **Studio Aura** conforme brief interno. Ajuste direitos de imagem/vídeo antes de publicação pública.
+1. Abra a URL indicada no navegador.
 
 ---
 
-© 2026 — Projeto de portfólio / estudo **Aura**: interiores premium, stack web moderna e fluxo **especificação + IA + desenvolvimento**.
+## Funcionalidades implementadas
+
+- Hero com vídeo em loop e overlay cinematográfico
+- Scroll storytelling com vídeo sincronizado
+- Galeria assimétrica dinâmica
+- Reveal animations via viewport
+- Slider automático de depoimentos
+- Formulário validado client-side
+- CTA direto para WhatsApp
+- Header fixo com blur e menu responsivo
+
+---
+
+## Licença e créditos
+
+Conteúdo de marca **Studio Aura** conforme brief interno. Ajuste direitos de imagem e vídeo antes de publicação pública.
+
+---
+
+© 2026 — Projeto de portfólio / estudo Aura: interiores premium, narrativa visual imersiva e fluxo moderno de especificação + IA + engenharia front-end.
